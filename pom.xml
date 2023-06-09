@@ -13,5 +13,10 @@
         <module>mall-product</module>
         <module>mall-member</module>
         <module>mall-ware</module>
+        <module>mall-config-center</module>
+        <module>mall-common</module>
+        <module>mall-gateway</module>
     </modules>
+
+
 </project>
