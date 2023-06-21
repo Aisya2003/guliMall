@@ -16,6 +16,8 @@
         <module>mall-config-center</module>
         <module>mall-common</module>
         <module>mall-gateway</module>
+        <module>mall-file</module>
+        <module>mall-search</module>
     </modules>
 
 
