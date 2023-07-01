@@ -8,6 +8,7 @@ import com.example.mall.product.service.BrandService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.List;
 
@@ -16,6 +17,8 @@ class MallProductApplicationTests {
 
     @Autowired
     private BrandService brandService;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
     @Test
     void contextLoads() {
 //        Brand entity = new Brand();
@@ -35,5 +38,12 @@ class MallProductApplicationTests {
         PageResult<Brand> page = PageResultUtils.getPage(params, brandService.getBaseMapper(), Brand.class);
         List<Brand> list = page.getList();
         System.out.println(list.toString());
+    }
+
+    @Test
+    void testRedis() {
+        stringRedisTemplate.opsForValue().set("test","hello");
+        System.out.println("set Success");
+        System.out.println("get Success,test = " + stringRedisTemplate.opsForValue().get("test"));
     }
 }
