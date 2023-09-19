@@ -1,0 +1,54 @@
+nacosGroup: mall-project
+nacosNamespcae: 123456789
+nacosServerAddr: 127.0.0.1:8848
+nacosCommonGroup: mall-common
+spring:
+  cloud:
+    nacos:
+      discovery:
+        namespace: ${nacosNamespcae}
+        group: ${nacosGroup}
+      server-addr: ${nacosServerAddr}
+      config:
+        server-addr: ${nacosServerAddr}
+        group: ${nacosGroup}
+        file-extension: yaml
+        refresh-enabled: true
+        namespace: ${nacosNamespcae}
+        shared-configs:
+          - data-id: thymeleaf-${spring.profiles.active}.yaml
+            group: ${nacosCommonGroup}
+            refresh: true
+          - data-id: mail-${spring.profiles.active}.yaml
+            group: ${nacosCommonGroup}
+            refresh: true
+          - data-id: redis-${spring.profiles.active}.yaml
+            group: ${nacosCommonGroup}
+            refresh: true
+          - data-id: spring-security-${spring.profiles.active}.yaml
+            group: ${nacosCommonGroup}
+            refresh: true
+          - data-id: spring-session-${spring.profiles.active}.yaml
+            group: ${nacosCommonGroup}
+            refresh: true
+          - data-id: sentinel-${spring.profiles.active}.yaml
+            group: ${nacosCommonGroup}
+            refresh: true
+          - data-id: actuator-${spring.profiles.active}.yaml
+            group: ${nacosCommonGroup}
+            refresh: true
+          - data-id: feign-${spring.profiles.active}.yaml
+            group: ${nacosCommonGroup}
+            refresh: true
+          - data-id: zipkin-sleuth-${spring.profiles.active}.yaml
+            group: ${nacosCommonGroup}
+            refresh: true
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: ${nacosCommonGroup}
+            refresh: true
+  application:
+    name: mall-auth
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true

@@ -1,0 +1,2 @@
+###测试检索
+GET http://localhost:13000/search.html?keyword=oppo&attrs=10_骁龙8+ Gen 1&attrs=13_64GB&skuPrice=100_6000

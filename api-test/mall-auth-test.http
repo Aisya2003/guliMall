@@ -1,0 +1,1 @@
+GET http://auth.mall.com/login/oauth2/code/github

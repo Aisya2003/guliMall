@@ -1,0 +1,27 @@
+###测试逻辑删除
+POST http://{{gateway-host}}/api/product/category/deleteBatch
+Content-Type: application/json
+
+[
+  1432
+]
+
+###测试分类
+GET http://{{product-host}}/product/category/list/tree
+
+###测试单个分类
+GET http://{{gateway-host}}/api/product/category/10
+
+###测试品牌分页
+GET  http://{{product-host}}/product/brand/list?page=1&limit=10&key=1
+
+###测试品牌删除
+POST  http://{{product-host}}/product/brand/delete
+Content-Type: application/json
+
+[
+  1,2
+]
+
+### 测试渲染分类信息
+GET http://localhost:10000/index/catalog.json

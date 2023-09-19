@@ -1,0 +1,2 @@
+###登录
+GET http://{{memberVo-host}}/memberVo/memberVo/inner/getmember?username=test1
