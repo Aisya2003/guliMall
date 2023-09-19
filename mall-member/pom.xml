@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example.mall</groupId>
-    <artifactId>mall-memeber</artifactId>
+    <artifactId>mall-member</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mall-memeber</name>
-    <description>mall-memeber</description>
+    <name>mall-member</name>
+    <description>mall-member</description>
     <properties>
         <java.version>8</java.version>
 
@@ -16,6 +16,26 @@
         <spring-cloud.version>2021.0.5</spring-cloud.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
@@ -78,7 +98,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.example.mall.member.MallMemeberApplication</mainClass>
+                    <mainClass>com.example.mall.memberVo.MallMemberApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
